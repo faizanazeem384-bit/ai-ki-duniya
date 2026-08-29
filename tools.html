@@ -1,0 +1,793 @@
+B
+
+
+
+<!DOCTYPE html><html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="Discover useful AI tools for chat, images, videos, coding, voice and writing at AI Ki Duniya.">
+
+<title>AI Tools | AI Ki Duniya</title>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+
+    /* ===== TOOLS PAGE ===== */
+
+    .tools-page {
+        min-height: 100vh;
+        padding: 80px 7%;
+        background:
+            radial-gradient(circle at 50% 0%, #17133b 0%, transparent 35%),
+            #070b17;
+    }
+
+    .tools-header {
+        text-align: center;
+        max-width: 750px;
+        margin: 0 auto 35px;
+    }
+
+    .tools-header span {
+        color: #8d75ff;
+        font-size: 13px;
+        font-weight: bold;
+        letter-spacing: 2px;
+    }
+
+    .tools-header h1 {
+        font-size: 52px;
+        line-height: 1.1;
+        margin: 12px 0;
+    }
+
+    .tools-header h1 span {
+        color: #8d75ff;
+    }
+
+    .tools-header p {
+        color: #9ca5ba;
+        font-size: 18px;
+    }
+
+
+    /* ===== SEARCH ===== */
+
+    .search-box {
+        max-width: 650px;
+        margin: 35px auto 20px;
+        display: flex;
+    }
+
+    .search-box input {
+        flex: 1;
+        min-width: 0;
+        padding: 16px 18px;
+
+        border: 1px solid #303955;
+        border-right: none;
+
+        background: #10162a;
+        color: white;
+
+        border-radius: 10px 0 0 10px;
+
+        outline: none;
+        font-size: 16px;
+    }
+
+    .search-box input::placeholder {
+        color: #737c94;
+    }
+
+    .search-box input:focus {
+        border-color: #7c5cff;
+    }
+
+    .search-box button {
+        padding: 0 25px;
+
+        border: none;
+        background: #7c5cff;
+        color: white;
+
+        border-radius: 0 10px 10px 0;
+
+        cursor: pointer;
+        font-weight: bold;
+        font-size: 15px;
+
+        transition: 0.3s;
+    }
+
+    .search-box button:hover {
+        background: #6b4be5;
+    }
+
+
+    /* ===== TOOL COUNT ===== */
+
+    .tool-count {
+        text-align: center;
+        color: #737c94;
+        font-size: 14px;
+        margin: 15px 0 25px;
+    }
+
+    .tool-count strong {
+        color: #a694ff;
+    }
+
+
+    /* ===== CATEGORIES ===== */
+
+    .categories {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 12px;
+
+        margin: 25px 0 50px;
+    }
+
+    .category-btn {
+        padding: 10px 18px;
+
+        background: #10162a;
+        color: #b8bfd3;
+
+        border: 1px solid #29324c;
+        border-radius: 30px;
+
+        cursor: pointer;
+        font-size: 14px;
+
+        transition: 0.3s;
+    }
+
+    .category-btn:hover {
+        border-color: #7c5cff;
+        color: white;
+        transform: translateY(-2px);
+    }
+
+    .category-btn.active {
+        background: #7c5cff;
+        color: white;
+        border-color: #7c5cff;
+    }
+
+
+    /* ===== TOOL GRID ===== */
+
+    .tool-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+    }
+
+
+    /* ===== TOOL CARD ===== */
+
+    .tool {
+        background: linear-gradient(145deg, #12192d, #0d1324);
+
+        border: 1px solid #242c45;
+        border-radius: 16px;
+
+        padding: 30px;
+
+        transition: 0.3s;
+
+        display: flex;
+        flex-direction: column;
+
+        min-height: 290px;
+    }
+
+    .tool:hover {
+        transform: translateY(-8px);
+        border-color: #7c5cff;
+        box-shadow: 0 18px 45px rgba(0, 0, 0, 0.3);
+    }
+
+    .tool-icon {
+        width: 65px;
+        height: 65px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        font-size: 34px;
+
+        border-radius: 15px;
+
+        background: #181f38;
+        border: 1px solid #293452;
+
+        margin-bottom: 18px;
+    }
+
+    .tool-category {
+        display: inline-block;
+
+        font-size: 11px;
+        color: #9b84ff;
+
+        font-weight: bold;
+        letter-spacing: 1.5px;
+
+        margin-bottom: 8px;
+    }
+
+    .tool h2 {
+        font-size: 23px;
+        margin-bottom: 10px;
+    }
+
+    .tool p {
+        color: #929bb1;
+        margin-bottom: 25px;
+        flex: 1;
+    }
+
+    .tool a {
+        display: inline-block;
+        width: fit-content;
+
+        padding: 10px 18px;
+
+        background: #7c5cff;
+        color: white;
+
+        border-radius: 8px;
+
+        font-weight: bold;
+
+        transition: 0.3s;
+    }
+
+    .tool a:hover {
+        background: #6b4be5;
+        transform: translateX(3px);
+    }
+
+
+    /* ===== NO RESULTS ===== */
+
+    #noResults {
+        display: none;
+
+        text-align: center;
+        color: #929bb1;
+
+        padding: 60px 0;
+
+        font-size: 17px;
+    }
+
+
+    /* ===== BACK HOME ===== */
+
+    .back-home {
+        text-align: center;
+        margin-top: 65px;
+    }
+
+    .back-home a {
+        color: #a694ff;
+        font-weight: bold;
+    }
+
+    .back-home a:hover {
+        color: white;
+    }
+
+
+    /* ===== TABLET ===== */
+
+    @media (max-width: 1000px) {
+
+        .tools-page {
+            padding: 70px 5%;
+        }
+
+        .tool-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .tools-header h1 {
+            font-size: 44px;
+        }
+    }
+
+
+    /* ===== MOBILE ===== */
+
+    @media (max-width: 600px) {
+
+        .tools-page {
+            padding: 55px 5%;
+        }
+
+        .tools-header h1 {
+            font-size: 36px;
+        }
+
+        .tools-header p {
+            font-size: 16px;
+        }
+
+        .search-box {
+            width: 100%;
+        }
+
+        .search-box input {
+            font-size: 14px;
+            padding: 14px;
+        }
+
+        .search-box button {
+            padding: 0 16px;
+            font-size: 13px;
+        }
+
+        .categories {
+            gap: 8px;
+            margin-bottom: 35px;
+        }
+
+        .category-btn {
+            padding: 8px 13px;
+            font-size: 13px;
+        }
+
+        .tool-grid {
+            grid-template-columns: 1fr;
+            gap: 18px;
+        }
+
+        .tool {
+            padding: 25px;
+            min-height: 270px;
+        }
+
+        .tool h2 {
+            font-size: 21px;
+        }
+
+        .tool p {
+            font-size: 15px;
+        }
+    }
+
+
+    /* ===== SMALL PHONES ===== */
+
+    @media (max-width: 380px) {
+
+        .tools-header h1 {
+            font-size: 32px;
+        }
+
+        .search-box button {
+            padding: 0 12px;
+        }
+
+        .category-btn {
+            padding: 7px 10px;
+        }
+    }
+
+</style>
+
+</head><body><!-- ===== NAVBAR ===== -->
+
+<header class="navbar">
+
+    <a href="index.html" class="logo">
+        🤖 AI <span>Ki Duniya</span>
+    </a>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="tools.html">AI Tools</a>
+        <a href="index.html#learn">Learn AI</a>
+        <a href="index.html#about">About</a>
+    </nav>
+
+    <a href="tools.html" class="nav-button">
+        AI Tools
+    </a>
+
+</header>
+
+
+<!-- ===== MAIN ===== -->
+
+<main class="tools-page">
+
+
+    <!-- HEADER -->
+
+    <div class="tools-header">
+
+        <span>AI TOOL DIRECTORY</span>
+
+        <h1>
+            Explore <span>AI Tools</span>
+        </h1>
+
+        <p>
+            Chat, images, videos, coding, voice aur writing
+            ke useful AI tools ek jagah explore karein.
+        </p>
+
+    </div>
+
+
+    <!-- SEARCH -->
+
+    <div class="search-box">
+
+        <input
+            type="search"
+            id="search"
+            placeholder="🔎 Search AI tools..."
+            aria-label="Search AI tools"
+            oninput="searchTools()"
+        >
+
+        <button onclick="searchTools()">
+            Search
+        </button>
+
+    </div>
+
+
+    <!-- COUNT -->
+
+    <div class="tool-count">
+        Showing <strong id="toolCount">6</strong> AI tools
+    </div>
+
+
+    <!-- CATEGORIES -->
+
+    <div class="categories">
+
+        <button
+            class="category-btn active"
+            onclick="filterTools('all', this)">
+            All
+        </button>
+
+        <button
+            class="category-btn"
+            onclick="filterTools('chat', this)">
+            💬 Chat
+        </button>
+
+        <button
+            class="category-btn"
+            onclick="filterTools('image', this)">
+            🎨 Images
+        </button>
+
+        <button
+            class="category-btn"
+            onclick="filterTools('video', this)">
+            🎬 Videos
+        </button>
+
+        <button
+            class="category-btn"
+            onclick="filterTools('coding', this)">
+            💻 Coding
+        </button>
+
+        <button
+            class="category-btn"
+            onclick="filterTools('voice', this)">
+            🎙️ Voice
+        </button>
+
+        <button
+            class="category-btn"
+            onclick="filterTools('writing', this)">
+            ✍️ Writing
+        </button>
+
+    </div>
+
+
+    <!-- ===== TOOL GRID ===== -->
+
+    <div class="tool-grid" id="toolGrid">
+
+
+        <!-- CHAT -->
+
+        <div class="tool" data-category="chat">
+
+            <div class="tool-icon">💬</div>
+
+            <span class="tool-category">
+                CHAT AI
+            </span>
+
+            <h2>ChatGPT</h2>
+
+            <p>
+                Questions, ideas, learning aur AI conversations
+                ke liye useful AI assistant.
+            </p>
+
+            <a
+                href="https://chatgpt.com/"
+                target="_blank"
+                rel="noopener noreferrer">
+                Open Tool →
+            </a>
+
+        </div>
+
+
+        <!-- IMAGE -->
+
+        <div class="tool" data-category="image">
+
+            <div class="tool-icon">🎨</div>
+
+            <span class="tool-category">
+                IMAGE AI
+            </span>
+
+            <h2>Adobe Firefly</h2>
+
+            <p>
+                Creative images aur AI-powered designs
+                banane ke liye.
+            </p>
+
+            <a
+                href="https://firefly.adobe.com/"
+                target="_blank"
+                rel="noopener noreferrer">
+                Open Tool →
+            </a>
+
+        </div>
+
+
+        <!-- VIDEO -->
+
+        <div class="tool" data-category="video">
+
+            <div class="tool-icon">🎬</div>
+
+            <span class="tool-category">
+                VIDEO & DESIGN
+            </span>
+
+            <h2>Canva AI</h2>
+
+            <p>
+                AI-powered designs, presentations aur
+                creative content banane ke liye.
+            </p>
+
+            <a
+                href="https://www.canva.com/"
+                target="_blank"
+                rel="noopener noreferrer">
+                Open Tool →
+            </a>
+
+        </div>
+
+
+        <!-- CODING -->
+
+        <div class="tool" data-category="coding">
+
+            <div class="tool-icon">💻</div>
+
+            <span class="tool-category">
+                CODING AI
+            </span>
+
+            <h2>GitHub Copilot</h2>
+
+            <p>
+                Programming aur coding projects mein
+                AI assistance ke liye.
+            </p>
+
+            <a
+                href="https://github.com/features/copilot"
+                target="_blank"
+                rel="noopener noreferrer">
+                Open Tool →
+            </a>
+
+        </div>
+
+
+        <!-- VOICE -->
+
+        <div class="tool" data-category="voice">
+
+            <div class="tool-icon">🎙️</div>
+
+            <span class="tool-category">
+                VOICE AI
+            </span>
+
+            <h2>ElevenLabs</h2>
+
+            <p>
+                AI voice aur audio creation ke liye
+                powerful tools.
+            </p>
+
+            <a
+                href="https://elevenlabs.io/"
+                target="_blank"
+                rel="noopener noreferrer">
+                Open Tool →
+            </a>
+
+        </div>
+
+
+        <!-- WRITING -->
+
+        <div class="tool" data-category="writing">
+
+            <div class="tool-icon">✍️</div>
+
+            <span class="tool-category">
+                WRITING AI
+            </span>
+
+            <h2>Gemini</h2>
+
+            <p>
+                Writing, brainstorming, learning aur
+                AI assistance ke liye.
+            </p>
+
+            <a
+                href="https://gemini.google.com/"
+                target="_blank"
+                rel="noopener noreferrer">
+                Open Tool →
+            </a>
+
+        </div>
+
+
+    </div>
+
+
+    <!-- NO RESULTS -->
+
+    <div id="noResults">
+        😕 No AI tools found.<br>
+        <small>Try another search or category.</small>
+    </div>
+
+
+    <!-- BACK HOME -->
+
+    <div class="back-home">
+        <a href="index.html">
+            ← Back to AI Ki Duniya Home
+        </a>
+    </div>
+
+
+</main>
+
+
+<!-- ===== JAVASCRIPT ===== -->
+
+<script>
+
+    let currentCategory = "all";
+
+
+    function filterTools(category, button) {
+
+        currentCategory = category;
+
+        const buttons =
+            document.querySelectorAll(".category-btn");
+
+        buttons.forEach(function(btn) {
+            btn.classList.remove("active");
+        });
+
+        button.classList.add("active");
+
+        searchTools();
+    }
+
+
+    function searchTools() {
+
+        const searchText =
+            document
+            .getElementById("search")
+            .value
+            .toLowerCase()
+            .trim();
+
+        const tools =
+            document.querySelectorAll(".tool");
+
+        let visibleCount = 0;
+
+
+        tools.forEach(function(tool) {
+
+            const text =
+                tool.innerText.toLowerCase();
+
+            const category =
+                tool.getAttribute("data-category");
+
+
+            const matchesSearch =
+                text.includes(searchText);
+
+            const matchesCategory =
+                currentCategory === "all" ||
+                category === currentCategory;
+
+
+            if (
+                matchesSearch &&
+                matchesCategory
+            ) {
+
+                tool.style.display = "flex";
+
+                visibleCount++;
+
+            } else {
+
+                tool.style.display = "none";
+
+            }
+
+        });
+
+
+        document.getElementById("toolCount").textContent =
+            visibleCount;
+
+
+        const noResults =
+            document.getElementById("noResults");
+
+
+        if (visibleCount === 0) {
+
+            noResults.style.display = "block";
+
+        } else {
+
+            noResults.style.display = "none";
+
+        }
+
+    }
+
+</script>
+
+</body>
+  </html>
