@@ -1,0 +1,668 @@
+<!DOCTYPE html><html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="AI Ki Duniya - Learn about artificial intelligence, AI tools, AI images, coding, writing and more.">
+
+<title>AI Articles | AI Ki Duniya</title>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+
+    /* ===== ARTICLES PAGE ===== */
+
+    .articles-page {
+        min-height: 100vh;
+        padding: 80px 7%;
+
+        background:
+            radial-gradient(
+                circle at 50% 0%,
+                #17133b 0%,
+                transparent 35%
+            ),
+            #070b17;
+    }
+
+
+    /* ===== HEADER ===== */
+
+    .articles-header {
+        max-width: 800px;
+        margin: 0 auto 45px;
+        text-align: center;
+    }
+
+    .articles-header span {
+        color: #8d75ff;
+        font-size: 13px;
+        font-weight: bold;
+        letter-spacing: 2px;
+    }
+
+    .articles-header h1 {
+        font-size: 52px;
+        margin: 12px 0;
+    }
+
+    .articles-header h1 span {
+        color: #8d75ff;
+    }
+
+    .articles-header p {
+        color: #9ca5ba;
+        font-size: 18px;
+    }
+
+
+    /* ===== SEARCH ===== */
+
+    .article-search {
+        max-width: 650px;
+        margin: 0 auto 45px;
+        display: flex;
+    }
+
+    .article-search input {
+        flex: 1;
+        min-width: 0;
+
+        padding: 16px 18px;
+
+        background: #10162a;
+        color: white;
+
+        border: 1px solid #303955;
+        border-right: none;
+
+        border-radius: 10px 0 0 10px;
+
+        outline: none;
+        font-size: 16px;
+    }
+
+    .article-search input::placeholder {
+        color: #737c94;
+    }
+
+    .article-search input:focus {
+        border-color: #7c5cff;
+    }
+
+    .article-search button {
+        padding: 0 25px;
+
+        border: none;
+        background: #7c5cff;
+        color: white;
+
+        border-radius: 0 10px 10px 0;
+
+        cursor: pointer;
+        font-weight: bold;
+    }
+
+
+    /* ===== ARTICLE GRID ===== */
+
+    .article-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+    }
+
+
+    /* ===== ARTICLE CARD ===== */
+
+    .article-card {
+        display: flex;
+        flex-direction: column;
+
+        min-height: 330px;
+
+        padding: 30px;
+
+        background: linear-gradient(
+            145deg,
+            #12192d,
+            #0d1324
+        );
+
+        border: 1px solid #242c45;
+        border-radius: 16px;
+
+        transition: 0.3s;
+    }
+
+    .article-card:hover {
+        transform: translateY(-8px);
+        border-color: #7c5cff;
+
+        box-shadow:
+            0 18px 45px rgba(0, 0, 0, 0.3);
+    }
+
+
+    /* ===== ARTICLE ICON ===== */
+
+    .article-icon {
+        width: 65px;
+        height: 65px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        font-size: 34px;
+
+        background: #181f38;
+
+        border: 1px solid #293452;
+        border-radius: 15px;
+
+        margin-bottom: 20px;
+    }
+
+
+    /* ===== ARTICLE CATEGORY ===== */
+
+    .article-category {
+        color: #9b84ff;
+
+        font-size: 11px;
+        font-weight: bold;
+
+        letter-spacing: 1.5px;
+
+        margin-bottom: 8px;
+    }
+
+
+    /* ===== ARTICLE TITLE ===== */
+
+    .article-card h2 {
+        font-size: 22px;
+        margin-bottom: 12px;
+    }
+
+
+    /* ===== ARTICLE DESCRIPTION ===== */
+
+    .article-card p {
+        color: #929bb1;
+        margin-bottom: 25px;
+
+        flex: 1;
+    }
+
+
+    /* ===== READ BUTTON ===== */
+
+    .read-btn {
+        display: inline-block;
+
+        width: fit-content;
+
+        padding: 10px 18px;
+
+        background: #7c5cff;
+        color: white;
+
+        border-radius: 8px;
+
+        font-weight: bold;
+
+        transition: 0.3s;
+    }
+
+    .read-btn:hover {
+        background: #6b4be5;
+    }
+
+
+    /* ===== NO RESULTS ===== */
+
+    #noArticles {
+        display: none;
+
+        text-align: center;
+
+        color: #929bb1;
+
+        padding: 60px 0;
+    }
+
+
+    /* ===== BACK HOME ===== */
+
+    .back-home {
+        text-align: center;
+        margin-top: 60px;
+    }
+
+    .back-home a {
+        color: #a694ff;
+        font-weight: bold;
+    }
+
+
+    /* ===== MOBILE ===== */
+
+    @media (max-width: 1000px) {
+
+        .article-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .articles-header h1 {
+            font-size: 44px;
+        }
+    }
+
+
+    @media (max-width: 600px) {
+
+        .articles-page {
+            padding: 55px 5%;
+        }
+
+        .articles-header h1 {
+            font-size: 36px;
+        }
+
+        .articles-header p {
+            font-size: 16px;
+        }
+
+        .article-search {
+            width: 100%;
+        }
+
+        .article-search input {
+            font-size: 14px;
+            padding: 14px;
+        }
+
+        .article-search button {
+            padding: 0 16px;
+            font-size: 13px;
+        }
+
+        .article-grid {
+            grid-template-columns: 1fr;
+            gap: 18px;
+        }
+
+        .article-card {
+            padding: 25px;
+        }
+    }
+
+</style>
+
+</head><body><!-- ===== NAVBAR ===== -->
+
+<header class="navbar">
+
+    <a href="index.html" class="logo">
+        🤖 AI <span>Ki Duniya</span>
+    </a>
+
+    <nav>
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="tools.html">
+            AI Tools
+        </a>
+
+        <a href="articles.html">
+            Articles
+        </a>
+
+        <a href="index.html#learn">
+            Learn AI
+        </a>
+
+        <a href="index.html#about">
+            About
+        </a>
+
+    </nav>
+
+    <a
+        href="tools.html"
+        class="nav-button">
+        Explore AI
+    </a>
+
+</header>
+
+
+<!-- ===== MAIN ===== -->
+
+<main class="articles-page">
+
+
+    <!-- HEADER -->
+
+    <div class="articles-header">
+
+        <span>
+            AI LEARNING HUB
+        </span>
+
+        <h1>
+            Learn <span>AI</span>
+        </h1>
+
+        <p>
+            Artificial Intelligence ko simple language mein
+            samjhein aur useful AI knowledge explore karein.
+        </p>
+
+    </div>
+
+
+    <!-- SEARCH -->
+
+    <div class="article-search">
+
+        <input
+            type="search"
+            id="articleSearch"
+            placeholder="🔎 Search articles..."
+            oninput="searchArticles()"
+        >
+
+        <button onclick="searchArticles()">
+            Search
+        </button>
+
+    </div>
+
+
+    <!-- ===== ARTICLES ===== -->
+
+    <div
+        class="article-grid"
+        id="articleGrid">
+
+
+        <!-- ARTICLE 1 -->
+
+        <article class="article-card">
+
+            <div class="article-icon">
+                🤖
+            </div>
+
+            <span class="article-category">
+                AI BASICS
+            </span>
+
+            <h2>
+                AI Kya Hai?
+            </h2>
+
+            <p>
+                Artificial Intelligence kya hai,
+                kaise kaam karti hai aur daily life
+                mein AI ke examples kya hain.
+            </p>
+
+            <a
+                href="article-ai-basics.html"
+                class="read-btn">
+                Read Article →
+            </a>
+
+        </article>
+
+
+        <!-- ARTICLE 2 -->
+
+        <article class="article-card">
+
+            <div class="article-icon">
+                💬
+            </div>
+
+            <span class="article-category">
+                AI TOOLS
+            </span>
+
+            <h2>
+                Best AI Chat Tools
+            </h2>
+
+            <p>
+                Chat aur learning ke liye useful
+                AI assistants ke baare mein simple guide.
+            </p>
+
+            <a
+                href="article-chat-ai.html"
+                class="read-btn">
+                Read Article →
+            </a>
+
+        </article>
+
+
+        <!-- ARTICLE 3 -->
+
+        <article class="article-card">
+
+            <div class="article-icon">
+                🎨
+            </div>
+
+            <span class="article-category">
+                IMAGE AI
+            </span>
+
+            <h2>
+                AI Image Tools
+            </h2>
+
+            <p>
+                AI ki madad se creative images aur
+                designs banane wale tools ko samjhein.
+            </p>
+
+            <a
+                href="article-ai-images.html"
+                class="read-btn">
+                Read Article →
+            </a>
+
+        </article>
+
+
+        <!-- ARTICLE 4 -->
+
+        <article class="article-card">
+
+            <div class="article-icon">
+                💻
+            </div>
+
+            <span class="article-category">
+                CODING AI
+            </span>
+
+            <h2>
+                AI for Coding
+            </h2>
+
+            <p>
+                Coding seekhne aur programming projects
+                mein AI kis tarah help kar sakti hai.
+            </p>
+
+            <a
+                href="article-ai-coding.html"
+                class="read-btn">
+                Read Article →
+            </a>
+
+        </article>
+
+
+        <!-- ARTICLE 5 -->
+
+        <article class="article-card">
+
+            <div class="article-icon">
+                ✍️
+            </div>
+
+            <span class="article-category">
+                WRITING AI
+            </span>
+
+            <h2>
+                AI Writing Tools
+            </h2>
+
+            <p>
+                Ideas, drafts aur writing ko improve karne
+                ke liye AI tools ka useful introduction.
+            </p>
+
+            <a
+                href="article-ai-writing.html"
+                class="read-btn">
+                Read Article →
+            </a>
+
+        </article>
+
+
+        <!-- ARTICLE 6 -->
+
+        <article class="article-card">
+
+            <div class="article-icon">
+                🎬
+            </div>
+
+            <span class="article-category">
+                VIDEO AI
+            </span>
+
+            <h2>
+                AI Video Tools
+            </h2>
+
+            <p>
+                AI video creation aur editing ke
+                different tools ke baare mein jaaniye.
+            </p>
+
+            <a
+                href="article-ai-video.html"
+                class="read-btn">
+                Read Article →
+            </a>
+
+        </article>
+
+
+    </div>
+
+
+    <!-- NO RESULTS -->
+
+    <div id="noArticles">
+
+        😕 No articles found.
+
+        <br>
+
+        <small>
+            Try another search.
+        </small>
+
+    </div>
+
+
+    <!-- BACK HOME -->
+
+    <div class="back-home">
+
+        <a href="index.html">
+            ← Back to AI Ki Duniya Home
+        </a>
+
+    </div>
+
+
+</main>
+
+
+<!-- ===== JAVASCRIPT ===== -->
+
+<script>
+
+    function searchArticles() {
+
+        const searchText =
+            document
+            .getElementById("articleSearch")
+            .value
+            .toLowerCase()
+            .trim();
+
+
+        const articles =
+            document.querySelectorAll(".article-card");
+
+
+        let visibleCount = 0;
+
+
+        articles.forEach(function(article) {
+
+            const text =
+                article.innerText.toLowerCase();
+
+
+            if (text.includes(searchText)) {
+
+                article.style.display = "flex";
+
+                visibleCount++;
+
+            } else {
+
+                article.style.display = "none";
+
+            }
+
+        });
+
+
+        const noArticles =
+            document.getElementById("noArticles");
+
+
+        if (visibleCount === 0) {
+
+            noArticles.style.display = "block";
+
+        } else {
+
+            noArticles.style.display = "none";
+
+        }
+
+    }
+
+</script>
+
+</body>
+</html>
