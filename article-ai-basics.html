@@ -1,0 +1,517 @@
+<!DOCTYPE html><html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="AI kya hai? Beginners ke liye simple guide. Artificial Intelligence, examples, benefits aur responsible AI use ke baare mein jaaniye.">
+
+<title>AI Kya Hai? | AI Ki Duniya</title>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+
+    /* ===== ARTICLE PAGE ===== */
+
+    .article-page {
+        min-height: 100vh;
+        padding: 70px 7% 100px;
+
+        background:
+            radial-gradient(
+                circle at 50% 0%,
+                #17133b 0%,
+                transparent 35%
+            ),
+            #070b17;
+    }
+
+
+    /* ===== ARTICLE HEADER ===== */
+
+    .article-header {
+        max-width: 850px;
+        margin: 0 auto 50px;
+        text-align: center;
+    }
+
+    .article-header span {
+        color: #8d75ff;
+        font-size: 13px;
+        font-weight: bold;
+        letter-spacing: 2px;
+    }
+
+    .article-header h1 {
+        font-size: 52px;
+        line-height: 1.15;
+        margin: 15px 0;
+    }
+
+    .article-header h1 strong {
+        color: #8d75ff;
+    }
+
+    .article-header p {
+        color: #9ca5ba;
+        font-size: 18px;
+    }
+
+
+    /* ===== ARTICLE CONTENT ===== */
+
+    .article-content {
+        max-width: 850px;
+        margin: auto;
+
+        background: #10162a;
+
+        border: 1px solid #242c45;
+        border-radius: 18px;
+
+        padding: 45px;
+    }
+
+    .article-content h2 {
+        font-size: 30px;
+        margin: 35px 0 15px;
+        color: white;
+    }
+
+    .article-content h2:first-child {
+        margin-top: 0;
+    }
+
+    .article-content h3 {
+        font-size: 21px;
+        margin: 25px 0 10px;
+    }
+
+    .article-content p {
+        color: #b0b8ca;
+        font-size: 17px;
+        line-height: 1.8;
+        margin-bottom: 18px;
+    }
+
+    .article-content ul {
+        padding-left: 25px;
+        margin-bottom: 25px;
+    }
+
+    .article-content li {
+        color: #b0b8ca;
+        font-size: 17px;
+        line-height: 1.8;
+        margin-bottom: 8px;
+    }
+
+
+    /* ===== HIGHLIGHT BOX ===== */
+
+    .highlight {
+        margin: 30px 0;
+        padding: 22px;
+
+        background: #171e35;
+
+        border-left: 4px solid #7c5cff;
+        border-radius: 10px;
+    }
+
+    .highlight p {
+        margin: 0;
+    }
+
+
+    /* ===== EXAMPLE CARDS ===== */
+
+    .examples {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        margin: 25px 0;
+    }
+
+    .example {
+        padding: 20px;
+
+        background: #0b1020;
+
+        border: 1px solid #252e49;
+        border-radius: 12px;
+    }
+
+    .example strong {
+        display: block;
+        margin-bottom: 7px;
+        color: #a694ff;
+    }
+
+    .example p {
+        font-size: 15px;
+        margin: 0;
+    }
+
+
+    /* ===== BACK BUTTON ===== */
+
+    .article-navigation {
+        max-width: 850px;
+        margin: 30px auto 0;
+
+        display: flex;
+        justify-content: space-between;
+        gap: 15px;
+    }
+
+    .article-navigation a {
+        padding: 12px 20px;
+
+        border-radius: 9px;
+
+        border: 1px solid #303955;
+
+        color: #c4c9d8;
+
+        font-weight: bold;
+
+        transition: 0.3s;
+    }
+
+    .article-navigation a:hover {
+        border-color: #7c5cff;
+        color: white;
+    }
+
+    .article-navigation .main-btn {
+        background: #7c5cff;
+        border-color: #7c5cff;
+        color: white;
+    }
+
+
+    /* ===== MOBILE ===== */
+
+    @media (max-width: 700px) {
+
+        .article-page {
+            padding: 50px 5% 70px;
+        }
+
+        .article-header h1 {
+            font-size: 36px;
+        }
+
+        .article-header p {
+            font-size: 16px;
+        }
+
+        .article-content {
+            padding: 25px 20px;
+        }
+
+        .article-content h2 {
+            font-size: 25px;
+        }
+
+        .article-content p,
+        .article-content li {
+            font-size: 16px;
+        }
+
+        .examples {
+            grid-template-columns: 1fr;
+        }
+
+        .article-navigation {
+            flex-direction: column;
+        }
+
+        .article-navigation a {
+            text-align: center;
+        }
+
+    }
+
+</style>
+
+</head><body><!-- ===== NAVBAR ===== -->
+
+<header class="navbar">
+
+    <a href="index.html" class="logo">
+        🤖 AI <span>Ki Duniya</span>
+    </a>
+
+    <nav>
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="tools.html">
+            AI Tools
+        </a>
+
+        <a href="articles.html">
+            Articles
+        </a>
+
+        <a href="index.html#learn">
+            Learn AI
+        </a>
+
+        <a href="index.html#about">
+            About
+        </a>
+
+    </nav>
+
+    <a
+        href="tools.html"
+        class="nav-button">
+        Explore AI
+    </a>
+
+</header>
+
+
+<!-- ===== ARTICLE ===== -->
+
+<main class="article-page">
+
+
+    <!-- HEADER -->
+
+    <div class="article-header">
+
+        <span>
+            AI BASICS
+        </span>
+
+        <h1>
+            AI Kya Hai?
+            <strong>Beginners Guide</strong>
+        </h1>
+
+        <p>
+            Artificial Intelligence ko simple language mein samjhein.
+        </p>
+
+    </div>
+
+
+    <!-- CONTENT -->
+
+    <article class="article-content">
+
+
+        <h2>
+            🤖 Artificial Intelligence kya hai?
+        </h2>
+
+        <p>
+            Artificial Intelligence, yaani AI, computer systems
+            ki woh technology hai jo kuch aise tasks perform
+            kar sakti hai jin ke liye normally human intelligence
+            ki zaroorat hoti hai.
+        </p>
+
+        <p>
+            AI data ko process karke patterns samajhne,
+            predictions karne, text generate karne, images
+            create karne aur doosre useful tasks mein help
+            kar sakti hai.
+        </p>
+
+
+        <div class="highlight">
+
+            <p>
+                <strong>Simple example:</strong>
+                Jab aap kisi AI assistant se question poochte hain
+                aur woh aapko answer deta hai, to AI language
+                processing aur learned patterns ka use kar rahi hoti hai.
+            </p>
+
+        </div>
+
+
+        <h2>
+            🧠 AI kaise kaam karti hai?
+        </h2>
+
+        <p>
+            AI systems ko large amounts of data se patterns
+            learn karne ke liye train kiya ja sakta hai.
+            Phir system naye input ko process karke output
+            generate karta hai.
+        </p>
+
+        <ul>
+
+            <li>
+                Data collect aur process kiya jata hai.
+            </li>
+
+            <li>
+                AI model patterns learn karta hai.
+            </li>
+
+            <li>
+                User ka input model ko diya jata hai.
+            </li>
+
+            <li>
+                Model input ke basis par output generate karta hai.
+            </li>
+
+        </ul>
+
+
+        <h2>
+            🌍 Daily Life mein AI ke Examples
+        </h2>
+
+        <div class="examples">
+
+            <div class="example">
+
+                <strong>📱 Recommendations</strong>
+
+                <p>
+                    Apps aapko content ya products recommend
+                    karne ke liye AI ka use kar sakti hain.
+                </p>
+
+            </div>
+
+
+            <div class="example">
+
+                <strong>🎙️ Voice Assistants</strong>
+
+                <p>
+                    Voice systems spoken language ko process
+                    karne ke liye AI techniques use karte hain.
+                </p>
+
+            </div>
+
+
+            <div class="example">
+
+                <strong>📸 Image Recognition</strong>
+
+                <p>
+                    AI images mein objects aur patterns
+                    identify karne mein help kar sakti hai.
+                </p>
+
+            </div>
+
+
+            <div class="example">
+
+                <strong>💬 AI Chatbots</strong>
+
+                <p>
+                    AI chatbots questions ka jawab dene,
+                    ideas dene aur learning mein help kar sakte hain.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <h2>
+            🎓 Students AI ko kaise use kar sakte hain?
+        </h2>
+
+        <p>
+            Students AI ko learning assistant ke taur par
+            use kar sakte hain. Misal ke taur par kisi difficult
+            concept ko simple words mein samajhne, ideas
+            generate karne aur practice questions banane mein
+            AI helpful ho sakti hai.
+        </p>
+
+        <div class="highlight">
+
+            <p>
+                <strong>Tip:</strong>
+                AI ke answers ko blindly copy karne ke bajaye
+                unhein samjhein, verify karein aur apne words
+                mein use karein.
+            </p>
+
+        </div>
+
+
+        <h2>
+            ⚠️ AI use karte waqt kya yaad rakhein?
+        </h2>
+
+        <ul>
+
+            <li>
+                Important information ko reliable sources se verify karein.
+            </li>
+
+            <li>
+                Personal ya private information share karne se pehle sochain.
+            </li>
+
+            <li>
+                AI ke output mein mistakes ho sakti hain.
+            </li>
+
+            <li>
+                School assignments mein apne teacher ke rules follow karein.
+            </li>
+
+        </ul>
+
+
+        <h2>
+            🚀 Conclusion
+        </h2>
+
+        <p>
+            AI modern technology ka important part ban chuki hai.
+            AI ko samajhna beginners ke liye mushkil nahi hai.
+            Basic concepts se start karke aap dheere dheere
+            AI tools, prompting aur AI projects ke baare mein
+            seekh sakte hain.
+        </p>
+
+        <p>
+            AI Ki Duniya par hum AI tools aur technology ko
+            simple language mein explore karte rahenge.
+        </p>
+
+
+    </article>
+
+
+    <!-- ===== NAVIGATION ===== -->
+
+    <div class="article-navigation">
+
+        <a href="articles.html">
+            ← All Articles
+        </a>
+
+        <a
+            href="tools.html"
+            class="main-btn">
+            Explore AI Tools →
+        </a>
+
+    </div>
+
+
+</main>
+
+</body>
+  </html>
