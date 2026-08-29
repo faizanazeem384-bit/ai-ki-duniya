@@ -1,0 +1,655 @@
+<!DOCTYPE html><html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="AI Ki Duniya - Explore AI tools, learn artificial intelligence and discover useful AI articles.">
+
+<title>AI Ki Duniya | Explore the Future</title>
+
+<meta name="google-site-verification" content="D-cada-K-jp9tVQpai0AjSvyXF4azzEEL2dc_AWIbtM" />
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+
+    /* ===== LATEST ARTICLES ===== */
+
+    .latest-articles {
+        padding: 100px 7%;
+        background: #070b17;
+    }
+
+    .latest-article-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+    }
+
+    .latest-article-card {
+        padding: 30px;
+
+        background: linear-gradient(
+            145deg,
+            #12192d,
+            #0d1324
+        );
+
+        border: 1px solid #242c45;
+        border-radius: 16px;
+
+        transition: 0.3s;
+    }
+
+    .latest-article-card:hover {
+        transform: translateY(-8px);
+        border-color: #7c5cff;
+        box-shadow:
+            0 18px 45px rgba(0,0,0,0.3);
+    }
+
+    .latest-article-icon {
+        width: 60px;
+        height: 60px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        font-size: 32px;
+
+        background: #181f38;
+        border: 1px solid #293452;
+        border-radius: 14px;
+
+        margin-bottom: 20px;
+    }
+
+    .latest-article-category {
+        color: #9b84ff;
+        font-size: 11px;
+        font-weight: bold;
+        letter-spacing: 1.5px;
+    }
+
+    .latest-article-card h3 {
+        font-size: 22px;
+        margin: 10px 0 12px;
+    }
+
+    .latest-article-card p {
+        color: #929bb1;
+        line-height: 1.7;
+        margin-bottom: 22px;
+    }
+
+    .latest-article-card a {
+        color: #a694ff;
+        font-weight: bold;
+    }
+
+    .latest-article-card a:hover {
+        color: white;
+    }
+
+    .articles-view-all {
+        text-align: center;
+        margin-top: 40px;
+    }
+
+    /* ===== MOBILE ===== */
+
+    @media (max-width: 900px) {
+
+        .latest-article-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+    }
+
+    @media (max-width: 600px) {
+
+        .latest-articles {
+            padding: 70px 5%;
+        }
+
+        .latest-article-grid {
+            grid-template-columns: 1fr;
+        }
+
+    }
+
+</style>
+
+</head><body><!-- ===== NAVBAR ===== -->
+
+<header class="navbar">
+
+    <a href="#home" class="logo">
+        🤖 AI <span>Ki Duniya</span>
+    </a>
+
+    <nav>
+
+        <a href="#home">
+            Home
+        </a>
+
+        <a href="tools.html">
+            AI Tools
+        </a>
+
+        <a href="articles.html">
+            Articles
+        </a>
+
+        <a href="#learn">
+            Learn AI
+        </a>
+
+        <a href="#about">
+            About
+        </a>
+
+    </nav>
+
+    <a href="tools.html" class="nav-button">
+        Explore AI
+    </a>
+
+</header>
+
+
+<!-- ===== HERO ===== -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <div class="badge">
+            ✨ Welcome to the Future
+        </div>
+
+        <h1>
+            Discover the
+            <span>Power of AI</span>
+        </h1>
+
+        <p>
+            AI Ki Duniya mein aapka welcome hai!
+            Yahan artificial intelligence ke tools,
+            learning resources aur latest AI ideas
+            discover karein.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a
+                href="tools.html"
+                class="primary-btn">
+                Explore AI Tools →
+            </a>
+
+            <a
+                href="#articles"
+                class="secondary-btn">
+                Read Articles
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="robot">
+        🤖
+    </div>
+
+</section>
+
+
+<!-- ===== FEATURES ===== -->
+
+<section class="features">
+
+    <div class="feature-card">
+
+        <div class="icon">
+            🤖
+        </div>
+
+        <h3>
+            AI Tools
+        </h3>
+
+        <p>
+            Useful AI tools discover karein.
+        </p>
+
+    </div>
+
+
+    <div class="feature-card">
+
+        <div class="icon">
+            📚
+        </div>
+
+        <h3>
+            Learn AI
+        </h3>
+
+        <p>
+            AI ko simple language mein seekhein.
+        </p>
+
+    </div>
+
+
+    <div class="feature-card">
+
+        <div class="icon">
+            💡
+        </div>
+
+        <h3>
+            AI Ideas
+        </h3>
+
+        <p>
+            AI se naye projects aur ideas explore karein.
+        </p>
+
+    </div>
+
+
+    <div class="feature-card">
+
+        <div class="icon">
+            🚀
+        </div>
+
+        <h3>
+            Future Tech
+        </h3>
+
+        <p>
+            Technology ke future ko explore karein.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ===== AI TOOLS ===== -->
+
+<section class="section" id="tools">
+
+    <div class="section-title">
+
+        <span>
+            EXPLORE
+        </span>
+
+        <h2>
+            Popular AI Categories
+        </h2>
+
+        <p>
+            AI ki different categories explore karein.
+        </p>
+
+    </div>
+
+
+    <div class="cards">
+
+
+        <div class="card">
+
+            <div class="card-icon">
+                📝
+            </div>
+
+            <h3>
+                AI Writing
+            </h3>
+
+            <p>
+                Writing, ideas aur content banane wale
+                AI tools.
+            </p>
+
+            <a
+                href="tools.html"
+                class="primary-btn">
+                Explore →
+            </a>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-icon">
+                🎨
+            </div>
+
+            <h3>
+                AI Images
+            </h3>
+
+            <p>
+                AI ki madad se creative images aur
+                designs.
+            </p>
+
+            <a
+                href="tools.html"
+                class="primary-btn">
+                Explore →
+            </a>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-icon">
+                🎬
+            </div>
+
+            <h3>
+                AI Videos
+            </h3>
+
+            <p>
+                AI video creation aur editing tools.
+            </p>
+
+            <a
+                href="tools.html"
+                class="primary-btn">
+                Explore →
+            </a>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-icon">
+                💻
+            </div>
+
+            <h3>
+                AI Coding
+            </h3>
+
+            <p>
+                Coding seekhne aur projects banane ke
+                AI tools.
+            </p>
+
+            <a
+                href="tools.html"
+                class="primary-btn">
+                Explore →
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ===== LATEST AI ARTICLES ===== -->
+
+<section
+    class="latest-articles"
+    id="articles">
+
+    <div class="section-title">
+
+        <span>
+            LEARN & DISCOVER
+        </span>
+
+        <h2>
+            Latest AI Articles
+        </h2>
+
+        <p>
+            AI concepts, tools aur useful guides
+            simple language mein explore karein.
+        </p>
+
+    </div>
+
+
+    <div class="latest-article-grid">
+
+
+        <!-- ARTICLE 1 -->
+
+        <article class="latest-article-card">
+
+            <div class="latest-article-icon">
+                🤖
+            </div>
+
+            <span class="latest-article-category">
+                AI BASICS
+            </span>
+
+            <h3>
+                AI Kya Hai? Beginners Guide
+            </h3>
+
+            <p>
+                Artificial Intelligence kya hai,
+                kaise kaam karti hai aur daily life
+                mein AI ke examples jaaniye.
+            </p>
+
+            <a href="article-ai-basics.html">
+                Read Article →
+            </a>
+
+        </article>
+
+
+        <!-- ARTICLE 2 -->
+
+        <article class="latest-article-card">
+
+            <div class="latest-article-icon">
+                🎨
+            </div>
+
+            <span class="latest-article-category">
+                IMAGE AI
+            </span>
+
+            <h3>
+                AI Image Tools
+            </h3>
+
+            <p>
+                AI ki madad se creative images aur
+                designs banane wale useful tools
+                explore karein.
+            </p>
+
+            <a href="articles.html">
+                Read Article →
+            </a>
+
+        </article>
+
+
+        <!-- ARTICLE 3 -->
+
+        <article class="latest-article-card">
+
+            <div class="latest-article-icon">
+                💻
+            </div>
+
+            <span class="latest-article-category">
+                CODING AI
+            </span>
+
+            <h3>
+                AI for Coding
+            </h3>
+
+            <p>
+                Coding seekhne aur programming projects
+                mein AI kis tarah help kar sakti hai.
+            </p>
+
+            <a href="articles.html">
+                Read Article →
+            </a>
+
+        </article>
+
+    </div>
+
+
+    <div class="articles-view-all">
+
+        <a
+            href="articles.html"
+            class="primary-btn">
+            View All Articles →
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- ===== LEARN SECTION ===== -->
+
+<section
+    class="learn-section"
+    id="learn">
+
+    <div class="learn-content">
+
+        <span>
+            START LEARNING
+        </span>
+
+        <h2>
+            AI ko simple tareeqe se
+            <strong>seekhein.</strong>
+        </h2>
+
+        <p>
+            Beginner se advanced level tak AI ke
+            concepts, tools aur projects explore karein.
+        </p>
+
+        <a
+            href="articles.html"
+            class="primary-btn">
+            Start Learning →
+        </a>
+
+    </div>
+
+
+    <div class="learn-box">
+
+        <div class="code-line">
+            &lt;AI /&gt;
+        </div>
+
+        <div class="code-line">
+            Learn • Create • Explore
+        </div>
+
+        <div class="code-line">
+            Future = AI 🚀
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ===== ABOUT ===== -->
+
+<section
+    class="about"
+    id="about">
+
+    <div class="section-title">
+
+        <span>
+            ABOUT US
+        </span>
+
+        <h2>
+            Welcome to AI Ki Duniya
+        </h2>
+
+    </div>
+
+    <p>
+        AI Ki Duniya ek educational website hai jahan
+        beginners artificial intelligence ke tools,
+        concepts aur technology ko simple way mein
+        explore kar sakte hain.
+    </p>
+
+</section>
+
+
+<!-- ===== FOOTER ===== -->
+
+<footer>
+
+    <div class="footer-logo">
+        🤖 AI Ki Duniya
+    </div>
+
+    <p>
+        Explore AI. Learn AI. Create the Future.
+    </p>
+
+    <div class="footer-links">
+
+        <a href="#home">
+            Home
+        </a>
+
+        <a href="tools.html">
+            AI Tools
+        </a>
+
+        <a href="articles.html">
+            Articles
+        </a>
+
+        <a href="#learn">
+            Learn
+        </a>
+
+        <a href="#about">
+            About
+        </a>
+
+    </div>
+
+    <p class="copyright">
+        © 2026 AI Ki Duniya. All rights reserved.
+    </p>
+
+</footer>
+
+</body>
+  </html>
