@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI Tools | AI Ki Duniya</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* ===== TOOLS PAGE ===== */
+
+        .tools-page {
+            min-height: 100vh;
+            padding: 80px 7%;
+        }
+
+        .tools-header {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .tools-header span {
+            color: #8d75ff;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .tools-header h1 {
+            font-size: 52px;
+            margin: 12px 0;
+        }
+
+        .tools-header h1 span {
+            color: #8d75ff;
+        }
+
+        .tools-header p {
+            color: #9ca5ba;
+            font-size: 18px;
+        }
+
+
+        /* ===== SEARCH ===== */
+
+        .search-box {
+            max-width: 650px;
+            margin: 30px auto;
+            display: flex;
+        }
+
+        .search-box input {
+            flex: 1;
+            padding: 16px 18px;
+
+            border: 1px solid #303955;
+            background: #10162a;
+            color: white;
+
+            border-radius: 10px 0 0 10px;
+
+            outline: none;
+            font-size: 16px;
+        }
+
+        .search-box input:focus {
+            border-color: #7c5cff;
+        }
+
+        .search-box button {
+            padding: 0 25px;
+
+            border: none;
+            background: #7c5cff;
+            color: white;
+
+            border-radius: 0 10px 10px 0;
+
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+
+        /* ===== CATEGORIES ===== */
+
+        .categories {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+
+            margin: 35px 0 50px;
+        }
+
+        .category-btn {
+            padding: 10px 18px;
+
+            background: #10162a;
+            color: #b8bfd3;
+
+            border: 1px solid #29324c;
+            border-radius: 30px;
+
+            cursor: pointer;
+            font-size: 14px;
+
+            transition: 0.3s;
+        }
+
+        .category-btn:hover {
+            border-color: #7c5cff;
+            color: white;
+        }
+
+        .category-btn.active {
+            background: #7c5cff;
+            color: white;
+            border-color: #7c5cff;
+        }
+
+
+        /* ===== TOOL GRID ===== */
+
+        .tool-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+
+        /* ===== TOOL CARD ===== */
+
+        .tool {
+            background: #10162a;
+
+            border: 1px solid #242c45;
+            border-radius: 15px;
+
+            padding: 30px;
+
+            transition: 0.3s;
+        }
+
+        .tool:hover {
+            transform: translateY(-8px);
+            border-color: #7c5cff;
+        }
+
+        .tool-icon {
+            font-size: 45px;
+            margin-bottom: 15px;
+        }
+
+        .tool h2 {
+            margin-bottom: 10px;
+        }
+
+        .tool p {
+            color: #929bb1;
+            margin-bottom: 20px;
+            min-height: 50px;
+        }
+
+        .tool-category {
+            display: inline-block;
+
+            font-size: 12px;
+            color: #9b84ff;
+
+            margin-bottom: 15px;
+        }
+
+        .tool a {
+            display: inline-block;
+
+            padding: 10px 18px;
+
+            background: #7c5cff;
+            color: white;
+
+            border-radius: 8px;
+
+            font-weight: bold;
+        }
+
+        .tool a:hover {
+            background: #6b4be5;
+        }
+
+
+        /* ===== NO RESULTS ===== */
+
+        #noResults {
+            display: none;
+
+            text-align: center;
+            color: #929bb1;
+
+            padding: 50px 0;
+        }
+
+
+        /* ===== MOBILE ===== */
+
+        @media (max-width: 900px) {
+
+            .tool-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .tools-header h1 {
+                font-size: 42px;
+            }
+        }
+
+
+        @media (max-width: 600px) {
+
+            .tools-page {
+                padding: 60px 5%;
+            }
+
+            .tools-header h1 {
+                font-size: 36px;
+            }
+
+            .tools-header p {
+                font-size: 16px;
+            }
+
+            .search-box {
+                width: 100%;
+            }
+
+            .search-box button {
+                padding: 0 18px;
+            }
+
+            .tool-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .categories {
+                gap: 8px;
+            }
+
+            .category-btn {
+                padding: 8px 13px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- ===== NAVBAR ===== -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            🤖 AI <span>Ki Duniya</span>
+        </div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="tools.html">AI Tools</a>
+            <a href="index.html#learn">Learn AI</a>
+            <a href="index.html#about">About</a>
+        </nav>
+
+        <a href="tools.html" class="nav-button">
+            AI Tools
+        </a>
+
+    </header>
+
+
+
+    <!-- ===== MAIN ===== -->
+
+    <main class="tools-page">
+
+
+        <!-- HEADER -->
+
+        <div class="tools-header">
+
+            <span>AI TOOL DIRECTORY</span>
+
+            <h1>
+                Explore <span>AI Tools</span>
+            </h1>
+
+            <p>
+                Powerful AI tools ko category ke hisaab se explore karein.
+            </p>
+
+        </div>
+
+
+
+        <!-- SEARCH -->
+
+        <div class="search-box">
+
+            <input
+                type="text"
+                id="search"
+                placeholder="Search AI tools..."
+                onkeyup="searchTools()"
+            >
+
+            <button onclick="searchTools()">
+                Search
+            </button>
+
+        </div>
+
+
+
+        <!-- CATEGORIES -->
+
+        <div class="categories">
+
+            <button
+                class="category-btn active"
+                onclick="filterTools('all', this)">
+                All
+            </button>
+
+            <button
+                class="category-btn"
+                onclick="filterTools('chat', this)">
+                💬 Chat
+            </button>
+
+            <button
+                class="category-btn"
+                onclick="filterTools('image', this)">
+                🎨 Images
+            </button>
+
+            <button
+                class="category-btn"
+                onclick="filterTools('video', this)">
+                🎬 Videos
+            </button>
+
+            <button
+                class="category-btn"
+                onclick="filterTools('coding', this)">
+                💻 Coding
+            </button>
+
+            <button
+                class="category-btn"
+                onclick="filterTools('voice', this)">
+                🎙️ Voice
+            </button>
+
+            <button
+                class="category-btn"
+                onclick="filterTools('writing', this)">
+                ✍️ Writing
+            </button>
+
+        </div>
+
+
+
+        <!-- TOOL CARDS -->
+
+        <div class="tool-grid" id="toolGrid">
+
+
+            <!-- CHAT -->
+
+            <div class="tool" data-category="chat">
+
+                <div class="tool-icon">💬</div>
+
+                <span class="tool-category">
+                    CHAT AI
+                </span>
+
+                <h2>ChatGPT</h2>
+
+                <p>
+                    Questions, ideas, learning aur AI conversations ke liye.
+                </p>
+
+                <a href="https://chatgpt.com/" target="_blank">
+                    Open Tool →
+                </a>
+
+            </div>
+
+
+
+            <!-- IMAGE -->
+
+            <div class="tool" data-category="image">
+
+                <div class="tool-icon">🎨</div>
+
+                <span class="tool-category">
+                    IMAGE AI
+                </span>
+
+                <h2>Adobe Firefly</h2>
+
+                <p>
+                    Creative images aur AI designs banane ke liye.
+                </p>
+
+                <a
+                    href="https://firefly.adobe.com/"
+                    target="_blank">
+                    Open Tool →
+                </a>
+
+            </div>
+
+
+
+            <!-- VIDEO -->
+
+            <div class="tool" data-category="video">
+
+                <div class="tool-icon">🎬</div>
+
+                <span class="tool-category">
+                    VIDEO AI
+                </span>
+
+                <h2>Canva AI</h2>
+
+                <p>
+                    AI-powered designs aur creative content banayein.
+                </p>
+
+                <a
+                    href="https://www.canva.com/"
+                    target="_blank">
+                    Open Tool →
+                </a>
+
+            </div>
+
+
+
+            <!-- CODING -->
+
+            <div class="tool" data-category="coding">
+
+                <div class="tool-icon">💻</div>
+
+                <span class="tool-category">
+                    CODING AI
+                </span>
+
+                <h2>GitHub Copilot</h2>
+
+                <p>
+                    Programming aur coding projects mein AI assistance.
+                </p>
+
+                <a
+                    href="https://github.com/features/copilot"
+                    target="_blank">
+                    Open Tool →
+                </a>
+
+            </div>
+
+
+
+            <!-- VOICE -->
+
+            <div class="tool" data-category="voice">
+
+                <div class="tool-icon">🎙️</div>
+
+                <span class="tool-category">
+                    VOICE AI
+                </span>
+
+                <h2>ElevenLabs</h2>
+
+                <p>
+                    AI voice aur audio creation ke liye.
+                </p>
+
+                <a
+                    href="https://elevenlabs.io/"
+                    target="_blank">
+                    Open Tool →
+                </a>
+
+            </div>
+
+
+
+            <!-- WRITING -->
+
+            <div class="tool" data-category="writing">
+
+                <div class="tool-icon">✍️</div>
+
+                <span class="tool-category">
+                    WRITING AI
+                </span>
+
+                <h2>Gemini</h2>
+
+                <p>
+                    Writing, brainstorming aur learning ke liye AI assistant.
+                </p>
+
+                <a
+                    href="https://gemini.google.com/"
+                    target="_blank">
+                    Open Tool →
+                </a>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- NO RESULTS -->
+
+        <div id="noResults">
+            😕 No AI tools found.
+        </div>
+
+
+    </main>
+
+
+
+    <!-- ===== JAVASCRIPT ===== -->
+
+    <script>
+
+        let currentCategory = "all";
+
+
+        function filterTools(category, button) {
+
+            currentCategory = category;
+
+            // Active button change
+
+            let buttons =
+                document.querySelectorAll(".category-btn");
+
+            buttons.forEach(function(btn) {
+                btn.classList.remove("active");
+            });
+
+            button.classList.add("active");
+
+
+            // Filter cards
+
+            searchTools();
+        }
+
+
+
+        function searchTools() {
+
+            let searchText =
+                document
+                .getElementById("search")
+                .value
+                .toLowerCase()
+                .trim();
+
+
+            let tools =
+                document.querySelectorAll(".tool");
+
+            let visibleCount = 0;
+
+
+            tools.forEach(function(tool) {
+
+                let text =
+                    tool.innerText.toLowerCase();
+
+                let category =
+                    tool.getAttribute("data-category");
+
+
+                let matchesSearch =
+                    text.includes(searchText);
+
+                let matchesCategory =
+                    currentCategory === "all" ||
+                    category === currentCategory;
+
+
+                if (
+                    matchesSearch &&
+                    matchesCategory
+                ) {
+
+                    tool.style.display = "block";
+
+                    visibleCount++;
+
+                } else {
+
+                    tool.style.display = "none";
+
+                }
+
+            });
+
+
+            // No results message
+
+            let noResults =
+                document.getElementById("noResults");
+
+
+            if (visibleCount === 0) {
+
+                noResults.style.display = "block";
+
+            } else {
+
+                noResults.style.display = "none";
+
+            }
+
+        }
+
+    </script>
+
+
+</body>
+</html>
